@@ -1,2 +1,2 @@
 <?php
-echo 'veikia';
+echo 'veikia parduotuves sandelis. valiooo';
