@@ -1,2 +1,3 @@
 <?php
-echo 'veikia';
+echo date ('H:i:s');
+echo 'labas rytas';
