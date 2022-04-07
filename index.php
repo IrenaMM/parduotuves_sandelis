@@ -41,11 +41,13 @@ include_once 'config.php';
             <td>
                 <a href="index.php?page=register">Registracija</a>
             </td>
-
         <?php } else { ?>
         <td>
-            <a href="index.php?page=sandelio_produktai">Sandėlio produktai</a>
+            <a href="index.php?page=warehouse">Sandėlio produktai</a>
         </td>
+            <td>
+                <a href="index.php?page=products">Produktai</a>
+            </td>
         <td>
             <a href="index.php?page=logout">Atsijungti</a>
         </td>
@@ -64,6 +66,8 @@ if ($page === null) {
     include 'pages/login.php';
 } elseif ($page === 'logout') {
     include 'pages/logout.php';
+} elseif ($page === 'products') {
+    include 'pages/products.php';
 }
 ?>
 

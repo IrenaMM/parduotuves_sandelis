@@ -33,7 +33,10 @@ if (isset($_POST['mail'])) {
 
 $_SESSION['code'] = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9);
 ?>
-<h1>Register</h1>
+<hr>
+<hr>
+
+<h1>Priregistruoti darbuotoją</h1>
 <form action="index.php?page=register" method="post">
     <table>
         <tr>
@@ -115,4 +118,29 @@ $_SESSION['code'] = rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 
     </table>
     <button type="submit">Registruotis</button>
 </form>
-
+<hr>
+<hr>
+<table>
+    <tr>
+        <th>Pareigos</th>
+        <th>Vardas</th>
+        <th>El. paštas</th>
+        <th>Slaptažodis</th>
+    </tr>
+    <?php foreach ($darbuotojai as $darbuotoja) { ?>
+        <tr>
+            <td>
+                <?php echo $darbuotoja['pareigybe'] ?>
+            </td>
+            <td>
+                <?php echo $darbuotoja['vardas'] ?>
+            </td>
+            <td>
+                <?php echo $darbuotoja['el_pastas'] ?>
+            </td>
+            <td>
+                <?php echo $darbuotoja['slaptazodis'] ?>
+            </td>
+        </tr>
+    <?php } ?>
+</table>
