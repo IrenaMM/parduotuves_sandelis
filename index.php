@@ -32,7 +32,7 @@ include_once 'config.php';
             <a href="index.php?page=pirkejai">Pirkėjai</a>
         </td>
         <td>
-            <a href="index2.php?page=parduotuves_prekes">Parduotuvės prekės</a>
+            <a href="index.php?page=parduotuves_prekes">Parduotuvės prekės</a>
         </td>
         <?php if (isLoged() === false) { ?>
             <td>
@@ -45,7 +45,7 @@ include_once 'config.php';
         <?php } ?>
         <?php if (isLoged() === true) { ?>
             <td>
-                <a href="index2.php?page=sandelio_produktai">Sandėlio produktai</a>
+                <a href="index.php?page=sandelio_produktai">Sandėlio produktai</a>
             </td>
             <td>
                 <a href="index.php?page=logout">Atsijungti</a>

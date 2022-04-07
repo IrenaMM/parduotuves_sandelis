@@ -2,7 +2,7 @@
 
 if (isset($_POST['employee']) && isset($_POST['name']) && isset($_POST['mail']) && isset($_POST['password'])) {
     $sql = 'insert into darbuotojai (pareigybe, vardas, el_pastas, slaptazodis) value ("' . $_POST['employee'] . '", "' . $_POST['name'] . '", "' . $_POST['mail'] . '", "' . $_POST['password'] . '")';
-    var_dump($sql);
+    echo 'Darbuotojas sukurtas';
     mysqli_query($database, $sql);
 }
 $result = mysqli_query($database, 'select * from darbuotojai');
