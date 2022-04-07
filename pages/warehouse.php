@@ -59,8 +59,8 @@ if (isset($_POST['name'])) {
 
 <table>
     <tr>
-        <th>Data</th>
-        <th>Laikas</th>
+        <th>Kategorija</th>
+        <th>Pavadinimas</th>
         <th>Vardas</th>
         <th>Paslauga</th>
         <th>Darbuotojas</th>

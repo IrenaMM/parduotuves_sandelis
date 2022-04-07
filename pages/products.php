@@ -26,24 +26,24 @@ $produktai = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <table>
     <tr>
-        <th>Pareigos</th>
-        <th>Vardas</th>
-        <th>El. paštas</th>
-        <th>Slaptažodis</th>
+        <th>Kategorija</th>
+        <th>Pavadinimas</th>
+        <th>Kaina</th>
+        <th>Galiojimo dienos</th>
     </tr>
-    <?php foreach ($darbuotojai as $darbuotoja) { ?>
+    <?php foreach ($produktai as $produkta) { ?>
         <tr>
             <td>
-                <?php echo $darbuotoja['pareigybe'] ?>
+                <?php echo $produkta['kategorija'] ?>
             </td>
             <td>
-                <?php echo $darbuotoja['vardas'] ?>
+                <?php echo $produkta['pavadinimas'] ?>
             </td>
             <td>
-                <?php echo $darbuotoja['el_pastas'] ?>
+                <?php echo $produkta['kaina'] ?>
             </td>
             <td>
-                <?php echo $darbuotoja['slaptazodis'] ?>
+                <?php echo $produkta['galiojimo_dienos'] ?>
             </td>
             <!--            <td>-->
             <!--                --><?php //echo $darbuotoja['employee_id'] ?>
