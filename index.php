@@ -42,14 +42,13 @@ include_once 'config.php';
                 <a href="index.php?page=register">Registracija</a>
             </td>
 
-        <?php } ?>
-        <?php if (isLoged() === true) { ?>
-            <td>
-                <a href="index.php?page=sandelio_produktai">Sandėlio produktai</a>
-            </td>
-            <td>
-                <a href="index.php?page=logout">Atsijungti</a>
-            </td>
+        <?php } else { ?>
+        <td>
+            <a href="index.php?page=sandelio_produktai">Sandėlio produktai</a>
+        </td>
+        <td>
+            <a href="index.php?page=logout">Atsijungti</a>
+        </td>
         <?php } ?>
     </tr>
 </table>
