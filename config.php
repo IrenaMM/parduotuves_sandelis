@@ -1,5 +1,5 @@
 <?php
-echo "<h2>Parduotuvės sandėlis</h2>";
+echo "<h2>Prekių valdymo sistema</h2>";
 
 session_start();
 
@@ -20,5 +20,9 @@ function isLoged(): bool
         return false;
     }
 }
-
+function getUser($database, $mail) {
+    $user = mysqli_query($database, 'select * from darbuotojai where el_pastas = "' . $mail . '"');
+    $user = mysqli_fetch_row($user);
+    return $user;
+}
 ?>

@@ -8,14 +8,13 @@ include_once 'config.php';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Parduotuvės sandėlis</title>
+    <title>Prekių valdymo sistema</title>
 </head>
 <body>
 <style>
     table {
         padding: 10px;
     }
-
     td {
         padding: 10px;
     }
@@ -26,31 +25,43 @@ include_once 'config.php';
             <a href="index.php">Home</a>
         </td>
         <td>
-            <a href="index.php?page=parduotuves">Parduotuves</a>
-        </td>
-        <td>
             <a href="index.php?page=pirkejai">Pirkėjai</a>
         </td>
-        <td>
-            <a href="index.php?page=parduotuves_prekes">Parduotuvės prekės</a>
-        </td>
+
         <?php if (isLoged() === false) { ?>
             <td>
-                <a href="index.php?page=login">Prisijungti</a>
+                <a href="index.php?page=login">Prisijungti darbuotojui</a>
             </td>
             <td>
-                <a href="index.php?page=register">Registracija</a>
+                <a href="index.php?page=register">Registruotis į darbuotojų lentelę</a>
             </td>
         <?php } else { ?>
-        <td>
-            <a href="index.php?page=warehouse">Sandėlio produktai</a>
-        </td>
+            <?php
+            switch (getUser($database, $_SESSION['mail'])[1]) {
+                case 'sandelio_darbuotojas';
+                    ?>
+                    <td>
+                        <a href="index.php?page=warehouse">Sandėlio produktai</a>
+                    </td>
+                    <td>
+                        <a href="index.php?page=products">Produktai</a>
+                    </td>
+
+                    <?php
+                    break;
+                case 'parduotuves_darbuotojas';
+                    ?>
+                    <td>
+                        <a href="index.php?page=shop">Parduotuves</a>
+                    </td>
+                    <td>
+                        <a href="index.php?page=parduotuves_prekes">Parduotuvės prekės</a>
+                    </td>
+                    <?php break;
+            } ?>
             <td>
-                <a href="index.php?page=products">Produktai</a>
+                <a href="index.php?page=logout">Atsijungti</a>
             </td>
-        <td>
-            <a href="index.php?page=logout">Atsijungti</a>
-        </td>
         <?php } ?>
     </tr>
 </table>
@@ -68,6 +79,8 @@ if ($page === null) {
     include 'pages/logout.php';
 } elseif ($page === 'products') {
     include 'pages/products.php';
+} elseif ($page === 'shop') {
+    include 'pages/shop.php';
 }
 ?>
 
