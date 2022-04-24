@@ -24,16 +24,15 @@ include_once 'config.php';
         <td>
             <a href="index.php">Home</a>
         </td>
-        <td>
-            <a href="index.php?page=pirkejai">Pirkėjai</a>
-        </td>
-
         <?php if (isLoged() === false) { ?>
             <td>
                 <a href="index.php?page=login">Prisijungti darbuotojui</a>
             </td>
             <td>
                 <a href="index.php?page=register">Registruotis į darbuotojų lentelę</a>
+            </td>
+            <td>
+                <a href="index.php?page=customer">Pirkėjai</a>
             </td>
         <?php } else { ?>
             <?php
@@ -55,7 +54,7 @@ include_once 'config.php';
                         <a href="index.php?page=shop">Parduotuves</a>
                     </td>
                     <td>
-                        <a href="index.php?page=parduotuves_prekes">Parduotuvės prekės</a>
+                        <a href="index.php?page=shop_products">Parduotuvės prekės</a>
                     </td>
                     <?php break;
             } ?>
@@ -81,6 +80,10 @@ if ($page === null) {
     include 'pages/products.php';
 } elseif ($page === 'shop') {
     include 'pages/shop.php';
+} elseif ($page === 'shop_products') {
+    include 'pages/shop_products.php';
+}elseif ($page === 'customer') {
+    include 'pages/customer.php';
 }
 ?>
 
