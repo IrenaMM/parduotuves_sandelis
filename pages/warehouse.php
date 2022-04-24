@@ -30,24 +30,7 @@ $warehouseproducts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <hr>
 <hr>
-<!--//-->
-<!--//    if (empty($name) || empty($quantity)) {-->
-<!--//        $errors[] = 'Yra tusciu lauku';-->
-<!--//    }-->
-<!---->
-<!--//    $checkUser = mysqli_query($database, 'select * from darbuotojai where el_pastas = "' . $name . '" and slaptazodis = "' . $quantity . '"');-->
-<!--//    $checkUser = mysqli_fetch_row($checkUser);-->
-<!---->
-<!--//    if ($checkUser == null) {-->
-<!--//        $errors[] = 'Blogi prisijungimo duomenys';-->
-<!--//    }-->
-<!---->
-<!--    if (empty($errors)) {-->
-<!--        $_SESSION['name'] = $name;-->
-<!--        header('Location: index.php');-->
-<!--    }-->
-<!--}-->
-<!--?>-->
+
 <h4>Pridėti prekę į sandėlį</h4>
 
 <form action="index.php?page=warehouse" method="post">
