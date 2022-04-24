@@ -47,9 +47,6 @@ $produktai = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <td>
                 <?php echo $produkta['galiojimo_dienos'] ?>
             </td>
-            <!--            <td>-->
-            <!--                --><?php //echo $darbuotoja['employee_id'] ?>
-            <!--            </td>-->
         </tr>
     <?php } ?>
 </table>
